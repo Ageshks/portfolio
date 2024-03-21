@@ -266,25 +266,25 @@ form btn2{
 
 /* --------------------------------------------------------- */
 
-/* nav .fas{
+nav .fas{
     display: none;
 
 }
 
-@media only screen and(max-width: 600px) {
-    #header{
+@media only screen and (max-width: 600px) {
+    #header {
+        width: auto;
         background-image: url(images/forsmall.png);
     }
-    .header-text{
+    .header-text {
         margin-top: 100%;
         font-size: 16px;
     }
-    .header-text h1{
+    .header-text h1 {
         font-size: 30px;
     }
-    nav .fas{
+    nav .fas {
         display: block;
         font-size: 25px;
-        
     }
-} */
+}
