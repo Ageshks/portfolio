@@ -398,6 +398,7 @@ nav .fas{
     }
     .about-col-1{
         margin-bottom: 30px;
+        margin-left: -130px;
     }
     .about-col-2{
         font-size: 15px;
@@ -414,4 +415,19 @@ nav .fas{
     color: #fafafa;
     margin-top: -40px;  
     display: block;
+}
+
+
+.more-info {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.more-info.show {
+    display: block;
+    max-height: 200px; /* Adjust height as needed */
+    opacity: 1;
 }
