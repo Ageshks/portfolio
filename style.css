@@ -20,6 +20,10 @@ body{background: black;
     
 
 }
+
+#new{
+    height: 440px;
+}
 .container{
     padding: 10px 10%;
 }
