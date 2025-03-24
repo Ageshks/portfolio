@@ -8,7 +8,7 @@ html{
     scroll-behavior: smooth;
 }
 body{background: black;
-    color: black;
+    color: rgb(252, 252, 252);
 
 }
 #header{
@@ -27,6 +27,11 @@ body{background: black;
     padding: 50px 0;
     background-color: #000000;
     text-align: center;
+}
+
+/* Custom CSS for GitHub Chart Month Names */
+.git {
+    fill: #ff004f !important; /* Change the color of the month names */
 }
 
 .github-row {
