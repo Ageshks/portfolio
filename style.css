@@ -14,12 +14,17 @@
     --card-bg: #1e1e1e;
     --gradient-primary: linear-gradient(45deg, #ff004f, #ff6b81);
     --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --nav-height: 130px;   /* fixed bar at rest: 30px pad + 79px-tall logo + 20px pad + 1px border */
+    --nav-height-compact: 59px;   /* bar once scrolled: 12px pad + 34px logo + 12px pad + 1px border */
+    --nav-gap: 12px;       /* breathing room kept between the fixed bar and anchors */
     --transition-fast: all 0.3s ease;
     --transition-medium: all 0.5s ease;
 }
 
 html {
     scroll-behavior: smooth;
+    /* keep section titles clear of the fixed navbar when a nav link is clicked */
+    scroll-padding-top: calc(var(--nav-height-compact) + var(--nav-gap));
     font-size: 16px;
 }
 
@@ -52,7 +57,9 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url(images/WhatsApp\ Image\ 2024-03-01\ at\ 10.08.47\ AM.jpeg);
+    /* reserve the fixed navbar's height so the hero text starts below the bar */
+    padding-top: var(--nav-height);
+    background-image: url(images/new.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -76,18 +83,41 @@ body {
     z-index: 2;
 }
 
-/* Navigation Bar */
+/* Navigation Bar - fixed to the top of the viewport so it stays visible while scrolling */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 20px 0;
+    padding: 30px 10% 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Compact, blurred bar once the page is scrolled (class toggled from the script) */
+nav.nav-scrolled {
+    padding: 12px 10%;
+    background: rgba(10, 10, 10, 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 0, 79, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
 .logo {
     width: 150px;
+    /* transparent wordmark is 328x173 - never force it back into a square */
+    height: auto;
     transition: var(--transition-fast);
+}
+
+nav.nav-scrolled .logo {
+    width: 64px;
 }
 
 .logo:hover {
@@ -133,6 +163,12 @@ nav ul li a:hover {
 
 nav ul li a:hover::after {
     width: 100%;
+}
+
+/* Hamburger / close icons are only needed on small screens */
+nav .fa-bars,
+nav ul li.menu-toggle {
+    display: none;
 }
 
 /* Header Text */
@@ -287,7 +323,7 @@ nav ul li a:hover::after {
     margin-top: 40px;
 }
 
-.github-content h2 {
+.github-content h2, .github-content h3 {
     font-size: 1.8rem;
     color: var(--text-color);
     margin-bottom: 20px;
@@ -551,10 +587,39 @@ nav ul li a:hover::after {
 .work img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
+    background: radial-gradient(circle at 50% 50%, #171717, #0b0b0b);
+    padding: 14px;
     border-radius: 15px;
     display: block;
     transition: transform 0.8s ease;
+}
+
+/* Icon tile used for projects that do not have an image yet */
+.work-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    background: radial-gradient(circle at 50% 40%, rgba(255, 0, 79, 0.25), #101010 70%);
+    text-align: center;
+}
+
+.work-media i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.work-media span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 .layer {
@@ -570,15 +635,15 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 22px 24px;
     text-align: center;
     transition: height 0.5s ease;
 }
 
 .layer h3 {
     font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
     transform: translateY(20px);
     opacity: 0;
     transition: var(--transition-medium);
@@ -618,6 +683,184 @@ nav ul li a:hover::after {
 .work:hover .layer i:hover {
     background: var(--primary-color);
     color: white;
+}
+
+/* Project category filter */
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    padding: 9px 22px;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+    background: rgba(255, 0, 79, 0.18);
+}
+
+.filter-btn.active {
+    background: var(--gradient-primary);
+    border-color: transparent;
+}
+
+.filter-count {
+    font-size: 0.78rem;
+    opacity: 0.75;
+}
+
+.filter-status {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.work[hidden] {
+    display: none;
+}
+
+/* Project card details */
+.project-cat {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 3px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.25);
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.layer p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition-medium);
+}
+
+.layer .project-tech {
+    margin-bottom: 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.4px;
+    color: #ffd0dc;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 14px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition-medium);
+}
+
+.project-links i {
+    margin-top: 0;
+}
+
+.project-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border: 2px dashed rgba(255, 255, 255, 0.55);
+    border-radius: 30px;
+    font-size: 0.74rem;
+    letter-spacing: 0.5px;
+}
+
+.project-chip i {
+    width: auto;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    background: none;
+    color: inherit;
+    font-size: 0.8rem;
+    line-height: 1;
+    text-align: left;
+    transform: none;
+}
+
+/* Wide banner artwork: fill the card instead of letter-boxing it */
+.work img.img-cover {
+    object-fit: cover;
+    padding: 0;
+}
+
+/* Text button used inside project cards, e.g. "View Extension" */
+.project-links .mini-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    color: var(--text-color);
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.project-links .mini-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.project-links .mini-btn i {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    color: inherit;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: left;
+    transform: none;
+}
+
+/* Reveal the project details on hover, tap or keyboard focus */
+.work:hover .layer h3,
+.work:hover .layer p,
+.work:hover .layer i,
+.work:hover .layer .project-cat,
+.work:hover .layer .project-links,
+.work:hover .layer .project-chip,
+.work:focus-within .layer h3,
+.work:focus-within .layer p,
+.work:focus-within .layer i,
+.work:focus-within .layer .project-cat,
+.work:focus-within .layer .project-links,
+.work:focus-within .layer .project-chip {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.15s;
+}
+
+.work:focus-within .layer {
+    height: 100%;
 }
 
 .btn {
@@ -820,11 +1063,50 @@ form .btn2 {
     }
 }
 
+@media only screen and (max-width: 900px) {
+    /* Turn the hover overlay into a readable caption panel on small screens
+       and touch devices, where :hover is not available */
+    .work .layer {
+        position: static;
+        height: auto;
+        padding: 22px 20px;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .work img,
+    .work-media {
+        border-radius: 15px 15px 0 0;
+    }
+
+    .layer h3,
+    .layer p,
+    .layer i,
+    .layer .project-cat,
+    .layer .project-links,
+    .layer .project-chip {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .work:hover .layer,
+    .work:focus-within .layer,
+    .work:active .layer {
+        height: auto;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .container {
         padding: 10px 5%;
     }
-    
+
+    /* follow the container's horizontal padding so the fixed bar lines up with the content */
+    nav,
+    nav.nav-scrolled {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
     .header-text {
         margin-top: 100px;
     }
@@ -861,11 +1143,11 @@ form .btn2 {
 
 @media only screen and (max-width: 600px) {
     #header {
-        background-image: url(images/WhatsApp\ Image\ 2024-03-21\ at\ 6.29.09\ PM.jpeg);
+        background-image: url(images/new.png);
         height: auto;
         min-height: 100vh;
     }
-    
+
     .header-text {
         margin-top: 50%;
         font-size: 16px;
@@ -906,6 +1188,12 @@ form .btn2 {
         font-size: 25px;
         cursor: pointer;
     }
+
+    /* Show the hamburger / close icons again on small screens */
+    nav .fa-bars,
+    nav ul li.menu-toggle {
+        display: block;
+    }
     
     .sub-title {
         font-size: 1.8rem;
@@ -924,6 +1212,10 @@ form .btn2 {
     }
     
     .work img {
+        height: 200px;
+    }
+
+    .work-media {
         height: 200px;
     }
     

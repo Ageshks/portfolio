@@ -5,25 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Agesh K S | Java Developer at Ibirix Digital India | Portfolio</title>
-    <meta name="description" content="Professional portfolio of Agesh K S, a Java developer at Ibirix Digital India Private Limited specializing in web development, Flutter mobile applications, and cyber security analysis.">
-    <meta name="keywords" content="Java developer, Mobile App developer, Flutter, Springboot, Cyber security analyst, Web development, Agesh K S, Ibirix Digital">
+    <title>Agesh K S | Flutter &amp; Java Developer | Mobile App Developer</title>
+    <meta name="description" content="Professional portfolio of Agesh K S, a Flutter and Java developer specializing in mobile app development, web development with Spring Boot, and cyber security analysis.">
+    <meta name="keywords" content="Java developer, Mobile App developer, Flutter, Springboot, Cyber security analyst, Web development, Agesh K S">
     <meta name="author" content="Agesh K S">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Agesh K S | Java Developer at Ibirix Digital India">
-    <meta property="og:description" content="Professional portfolio of Agesh K S, a Java developer at Ibirix Digital India showcasing web development, mobile app development, and cyber security skills.">
+    <meta property="og:title" content="Agesh K S | Flutter &amp; Java Developer"> 
+    <meta property="og:description" content="Portfolio of Agesh K S showcasing Flutter mobile app development, web development with Spring Boot, and cyber security skills.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com">
-    <meta property="og:image" content="images/GESH.png">
+    <meta property="og:site_name" content="Agesh K S">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:url" content="https://www.ageshks.in/">
+    <meta property="og:image" content="https://www.ageshks.in/images/GESH.png">
+    <meta property="og:image:alt" content="Agesh K S logo">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agesh K S | Flutter &amp; Java Developer">
+    <meta name="twitter:description" content="Portfolio of Agesh K S showcasing Flutter mobile app development, web development with Spring Boot, and cyber security skills.">
+    <meta name="twitter:image" content="https://www.ageshks.in/images/GESH.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/GESH.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://yourdomain.com">
+    <link rel="canonical" href="https://www.ageshks.in/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://kit.fontawesome.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
     
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="images/GESH.png" as="image" fetchpriority="high">
     <script src="https://kit.fontawesome.com/4d490541c2.js" crossorigin="anonymous"></script>
     
     <!-- Structured Data / Schema.org -->
@@ -32,9 +50,18 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Agesh K S",
-      "url": "https://ageshks.in",
-      "jobTitle": "Flutter Developer, pokak technology, Java Developer, Mobile App Developer, Cyber Security Analyst",
-      "image": "images/GESH.png",
+      "url": "https://www.ageshks.in/",
+      "jobTitle": "Flutter Developer",
+      "description": "Flutter and Java developer specializing in mobile app development, web development with Spring Boot, and cyber security analysis.",
+      "image": "https://www.ageshks.in/images/GESH.png",
+      "knowsAbout": [
+        "Flutter",
+        "Dart",
+        "Java",
+        "Spring Boot",
+        "Web Development",
+        "Cyber Security"
+      ],
       "sameAs": [
         "https://www.instagram.com/ageshks/",
         "https://www.linkedin.com/in/ageshks",
@@ -42,29 +69,32 @@
       ],
       "worksFor": {
         "@type": "Organization",
-        "name": "Ibirix Digital India Private Limited"
+        "name": "Pokak Technologies Pvt Ltd"
       }
     }
     </script>
 </head>
 <body>
    <div id="header">
+    <!-- Sticky navigation bar. It stays outside .container (which creates a z-index: 2
+         stacking context) so the fixed bar always paints above every section. -->
+    <nav>
+      <img src="images/GESH.png" class="logo" alt="Agesh K S Logo">
+      <ul id="sidemenu">
+        <li><a href="#header" aria-label="Navigate to Home section" onclick="closemenu()">HOME</a></li>
+        <li><a href="#about" aria-label="Navigate to About section" onclick="closemenu()">ABOUT</a></li>
+        <li><a href="#services" aria-label="Navigate to Services section" onclick="closemenu()">SERVICES</a></li>
+        <li><a href="#portfolio" aria-label="Navigate to Portfolio section" onclick="closemenu()">PORTFOLIO</a></li>
+        <li><a href="#contact" aria-label="Navigate to Contact section" onclick="closemenu()">CONTACT</a></li>
+        <li class="menu-toggle"><i class="fa-sharp fa-solid fa-circle-xmark" onclick="closemenu()" onkeydown="menuKey(event, closemenu)" role="button" tabindex="0" aria-label="Close menu"></i></li>
+      </ul>
+      <i class="fa-sharp fa-solid fa-bars menu-toggle" onclick="openmenu()" onkeydown="menuKey(event, openmenu)" role="button" tabindex="0" aria-label="Open menu"></i>
+    </nav>
+
     <div class="container">
-      <nav>
-        <img src="images/GESH.png" class="logo" alt="Agesh K S Logo">
-        <ul id="sidemenu">
-          <li><a href="#header" aria-label="Navigate to Home section">HOME</a></li>
-          <li><a href="#about" aria-label="Navigate to About section">ABOUT</a></li>
-          <li><a href="#services" aria-label="Navigate to Services section">SERVICES</a></li>
-          <li><a href="#portfolio" aria-label="Navigate to Portfolio section">PORTFOLIO</a></li>
-          <li><a href="#contact" aria-label="Navigate to Contact section">CONTACT</a></li>
-          <i class="fa-sharp fa-solid fa-circle-xmark" onclick="closemenu()" aria-label="Close menu"></i>
-        </ul>
-        <i class="fa-sharp fa-solid fa-bars" onclick="openmenu()" aria-label="Open menu"></i>
-      </nav>
       <div class="header-text">
         <h1>Hi, I'm <span>Agesh K S</span><br>From India</h1>
-        <p>Flutter Developer at POKAK Technologies pvt LTD | Mobile App Developer | Springboot | Flutter | Cyber Security Analyst</p>
+        <p>Flutter Developer at NEXTRADEV Technologies | Mobile App Developer | Springboot | Flutter | Cyber Security Analyst</p>
         <p><span>Web Development</span> - Freelancer</p>
       </div>
     </div>
@@ -83,7 +113,7 @@
 
         <div class="github-item">
           <h3>GitHub Stats</h3>
-          <img src="https://github-readme-stats.vercel.app/api?username=Ageshks&show_icons=true&theme=dark" class="git" alt="GitHub Statistics for Agesh K S">
+          <img src="https://github-readme-stats.vercel.app/api?username=Ageshks&amp;show_icons=true&amp;theme=dark" class="git" alt="GitHub Statistics for Agesh K S" loading="lazy" decoding="async">
         </div>
       
       <div class="github-content">
@@ -92,6 +122,7 @@
           <i class="fa-brands fa-github"></i> Visit My GitHub Profile
         </a>
       </div>
+      </div>
     </div>
   </div>
      
@@ -99,7 +130,7 @@
     <div class="container">
       <div class="row">
         <div class="about-col-1">
-          <img id="new" src="images/WhatsApp Image 2025-03-06 at 5.15.15 PM.jpeg" alt="Agesh K S profile photo">
+          <img id="new" src="images/avatar.png" alt="Agesh K S profile photo" loading="lazy" decoding="async">
         </div>
         <div class="about-col-2">
           <h2 class="sub-title">About Me</h2>
@@ -107,9 +138,9 @@
             <b>I am an enthusiastic, self-motivated, reliable, and hard-working professional with experience across software development and mobile app development. I began my career as a Junior Software Developer at Eduzell, then worked as a Software Developer at Ibirix Digital India Pvt Ltd, gaining valuable industry exposure. Currently, I am employed as a Flutter Developer at Pokak Technologies, where I build scalable and user-friendly mobile applications. I am a mature team player, adaptable to challenging situations, capable of working both independently and collaboratively, and skilled at meeting strict deadlines under pressure.          </b>
           </p>
           <div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-            <p class="tab-links" onclick="opentab('experience')">Experience</p>
-            <p class="tab-links" onclick="opentab('education')">Education</p>
+            <p class="tab-links active-link" onclick="opentab('skills', event)" onkeydown="tabKey(event, 'skills')" role="button" tabindex="0">Skills</p>
+            <p class="tab-links" onclick="opentab('experience', event)" onkeydown="tabKey(event, 'experience')" role="button" tabindex="0">Experience</p>
+            <p class="tab-links" onclick="opentab('education', event)" onkeydown="tabKey(event, 'education')" role="button" tabindex="0">Education</p>
           </div>
           <div class="tab-contents active-tab" id="skills">
             <ul>
@@ -145,7 +176,7 @@
       <div class="services-list">
         <div>
           <i class="fa-solid fa-code"></i>
-          <h3>Web Design & Development</h3>
+          <h3>Web Design &amp; Development</h3>
           <p>Creating visually stunning and responsive websites using HTML, CSS, JavaScript, and modern frameworks to ensure seamless user experiences.</p>
           <p>Offering complete web solutions from frontend to backend, including UI/UX design, API development, and database management, to create dynamic and high-performance websites.</p>
         </div>
@@ -168,64 +199,271 @@
   <div id="portfolio">
     <div class="container">
       <h2 class="sub-title">Projects</h2>
-      <div class="work-list">    
-        <div class="work">
-          <img src="images/travelapp.png" alt="Jetskie Travel App project screenshot">
+      <!-- Category filter: only shows/hides cards, the DOM order (01 -&gt; 16) is never re-sorted -->
+      <div class="project-filters" role="group" aria-label="Filter projects by category">
+        <button type="button" class="filter-btn active" data-filter="all" data-label="All" aria-pressed="true">All <span class="filter-count"></span></button>
+        <button type="button" class="filter-btn" data-filter="flutter" data-label="Flutter" aria-pressed="false">Flutter <span class="filter-count"></span></button>
+        <button type="button" class="filter-btn" data-filter="fullstack" data-label="Full Stack" aria-pressed="false">Full Stack <span class="filter-count"></span></button>
+        <button type="button" class="filter-btn" data-filter="web" data-label="Web Development" aria-pressed="false">Web Development <span class="filter-count"></span></button>
+        <button type="button" class="filter-btn" data-filter="tools" data-label="Developer Tools" aria-pressed="false">Developer Tools <span class="filter-count"></span></button>
+      </div>
+      <p class="filter-status" id="filter-status" role="status" aria-live="polite"></p>
+
+      <div class="work-list">
+        <!-- 01 &middot; MyAuth -->
+        <div class="work" data-category="flutter">
+          <img src="images/myauth.png" alt="MyAuth authentication app logo" loading="lazy" decoding="async">
           <div class="layer">
-            <h3>Travel App</h3>
-            <p>Feature-rich travel app built using Flutter & GetX. Includes hotel booking, adventure discovery, map-based search, wishlist management, and integrated payment options. Fully responsive UI and optimized for Android & iOS.</p>
-            <a href="https://bitbucket.org/mobile_apps_coreframe/mobileapps/commits/branch/main" target="_blank" rel="noopener noreferrer" aria-label="View Jetskie Travel App project on Bitbucket">
-              <i class="fa-solid fa-up-right-from-square"></i>
-            </a>
+            <span class="project-cat">Flutter / Mobile App</span>
+            <h3>MyAuth</h3>
+            <p class="project-tech">Flutter &bull; Dart &bull; Authentication &bull; REST API</p>
+            <p class="project-desc">An authentication-focused Flutter mobile application demonstrating user authentication, login, registration and account-management workflows.</p>
+            <div class="project-links">
+              <a href="https://github.com/Ageshks/Myauth" target="_blank" rel="noopener noreferrer" aria-label="View the MyAuth project on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 &middot; AisCatty -->
+        <div class="work" data-category="flutter">
+          <img src="images/aiscatty-banner.jpg" class="img-cover" alt="AisCatty mobile application banner" loading="lazy" decoding="async">
+          <div class="layer">
+            <span class="project-cat">Flutter / Mobile App</span>
+            <h3>AisCatty</h3>
+            <p class="project-tech">Flutter &bull; Dart &bull; Mobile Application Development</p>
+            <p class="project-desc">A Flutter mobile application project showcasing modern mobile UI development, application workflows and reusable Flutter components.</p>
+            <div class="project-links">
+              <a href="https://github.com/Ageshks/aiscatty" target="_blank" rel="noopener noreferrer" aria-label="View the AisCatty project on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 &middot; Travel App / Explorist -->
+        <div class="work" data-category="flutter">
+          <img src="images/travelapp.png" alt="Explorist travel app home screen screenshots" loading="lazy" decoding="async">
+          <div class="layer">
+            <span class="project-cat">Flutter / Mobile App</span>
+            <h3>Travel App &middot; Explorist</h3>
+            <p class="project-tech">Flutter &bull; Dart &bull; GetX &bull; Dio &bull; REST API</p>
+            <p class="project-desc">A feature-rich travel application with hotel booking, adventure discovery, place search, filters, wishlist, bookings, profile management and notifications.</p>
+            <div class="project-links">
+              <a href="https://bitbucket.org/mobile_apps_coreframe/mobileapps/commits/branch/main" target="_blank" rel="noopener noreferrer" aria-label="View the Travel App project repository on Bitbucket">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
           </div>
         </div>        
-        <div class="work">
-          <img src="images/jetskie.png" alt="jetskie">
+        <!-- 04 &middot; Jetskie -->
+        <div class="work" data-category="flutter">
+          <img src="images/jetskie.png" alt="Jetskie browser game plane artwork" loading="lazy" decoding="async">
           <div class="layer">
+            <span class="project-cat">Game / Flutter</span>
             <h3>Jetskie</h3>
-            <a href="https://game.ageshks.in/" target="_blank" rel="noopener noreferrer" aria-label="">
-              <i class="fa-solid fa-up-right-from-square"></i>
-            </a>
+            <p class="project-tech">Flutter &bull; Dart &bull; Flame</p>
+            <p class="project-desc">A browser-based Jetskie game developed using Flutter and the Flame game engine, playable directly in the browser.</p>
+            <div class="project-links">
+              <a href="https://game.ageshks.in/" target="_blank" rel="noopener noreferrer" aria-label="Play the Jetskie game">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="work">
-          <img src="images/myauth.png" alt="Myauth">
+        <!-- 05 &middot; AI Camera Finder -->
+        <div class="work" data-category="flutter">
+          <img src="images/camera.png" alt="AI Camera Finder app icon" loading="lazy" decoding="async">
           <div class="layer">
-            <h3>Myauth</h3>
-            <a href="https://game.ageshks.in/" target="_blank" rel="noopener noreferrer" aria-label="">
-              <i class="fa-solid fa-up-right-from-square"></i>
-            </a>
-          </div>
-        </div>
-        <div class="work">
-          <img src="images/camera.png" alt="AI Camera Finder project screenshot">
-          <div class="layer">
+            <span class="project-cat">Flutter / AI</span>
             <h3>AI Camera Finder</h3>
-            <a href="/images/Screenrecording_20250225_230145.mp4" target="_blank" rel="noopener noreferrer" aria-label="View AI Camera Finder project">
-              <i class="fa-solid fa-up-right-from-square"></i>
-            </a>
+            <p class="project-tech">Flutter &bull; Dart &bull; Location Services &bull; Notifications &bull; REST API</p>
+            <p class="project-desc">An AI Camera Radar that tracks your real-time location and alerts you when you are near an AI-powered camera, with map-based discovery and distance alerts.</p>
+            <div class="project-links">
+              <a href="https://github.com/Ageshks/AI-finder" target="_blank" rel="noopener noreferrer" aria-label="View the AI Camera Finder project on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="images/Screenrecording_20250225_230145.mp4" target="_blank" rel="noopener noreferrer" aria-label="Watch the AI Camera Finder demo video">
+                <i class="fa-solid fa-circle-play"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="work">
-          <img src="images/app_icon.png" alt="Bus Reservation project screenshot">
+        <!-- 06 &middot; Bus Buddy / Bus Reservation -->
+        <div class="work" data-category="flutter fullstack">
+          <img src="images/app_icon.png" alt="Bus Buddy bus reservation app logo" loading="lazy" decoding="async">
           <div class="layer">
-            <h3>Bus Reservation</h3>
-            <a href="/images/Screenrecording_20250225_230145.mp4" target="_blank" rel="noopener noreferrer" aria-label="View Bus Reservation project">
-              <i class="fa-solid fa-up-right-from-square"></i>
-            </a>
+            <span class="project-cat">Flutter / Full Stack</span>
+            <h3>Bus Buddy</h3>
+            <p class="project-tech">Flutter &bull; Java &bull; Spring Boot &bull; REST API &bull; MySQL</p>
+            <p class="project-desc">A bus reservation application with a Flutter frontend and a Java Spring Boot backend, taking passengers from bus search to confirmed ticket.</p>
+            <div class="project-links">
+              <a href="images/Screenrecording_20250225_230145.mp4" target="_blank" rel="noopener noreferrer" aria-label="Watch the Bus Buddy demo video">
+                <i class="fa-solid fa-circle-play"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="work">
-          <img src="images/logo.png" alt="Calendar Expense Tracker project screenshot">
+
+        <!-- 07 &middot; Calendar Expense Tracker -->
+        <div class="work" data-category="flutter">
+          <img src="images/logo.png" alt="Calendar Expense Tracker app logo" loading="lazy" decoding="async">
           <div class="layer">
+            <span class="project-cat">Flutter / Finance</span>
             <h3>Calendar Expense Tracker</h3>
-            <a href="https://www.linkedin.com/posts/ageshks_expensetracker-calendarapp-personalfinance-activity-7297863303945408512-e2dQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADjVnk8Bo6lxQ-ArwDBBjKSleV6rq8XWJNY" target="_blank" rel="noopener noreferrer" aria-label="View Calendar Expense Tracker project">
-              <i class="fa-solid fa-up-right-from-square"></i>
-            </a>
+            <p class="project-tech">Flutter &bull; Dart &bull; Calendar UI &bull; Personal Finance</p>
+            <p class="project-desc">A personal finance app that plans and tracks expenses on a calendar, with category-wise breakdowns and daily and monthly views of your spending.</p>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/posts/ageshks_expensetracker-calendarapp-personalfinance-activity-7297863303945408512-e2dQ?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAADjVnk8Bo6lxQ-ArwDBBjKSleV6rq8XWJNY" target="_blank" rel="noopener noreferrer" aria-label="View the Calendar Expense Tracker project post on LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 08 &middot; Pet Adoption App -->
+        <div class="work" data-category="flutter">
+          <img src="images/pet-adoption.png" alt="Pet Adoption App cat artwork" loading="lazy" decoding="async">
+          <div class="layer">
+            <span class="project-cat">Flutter / Social</span>
+            <h3>Pet Adoption App</h3>
+            <p class="project-tech">Flutter &bull; Dart &bull; GetX &bull; REST API &bull; Location &bull; Notifications &bull; Messaging</p>
+            <p class="project-desc">A pet adoption platform with pet profiles, nearby pets, adoption requests, video/status uploads, messaging with unread indicators and notifications.</p>
+            <div class="project-links">
+              <span class="project-chip"><i class="fa-solid fa-lock"></i> Private Project</span>
+            </div>
+          </div>
+        </div>
+        <!-- 09 &middot; NextBilling -->
+        <div class="work" data-category="fullstack">
+          <div class="work-media" aria-hidden="true">
+            <i class="fa-solid fa-cash-register"></i>
+            <span>NextBilling</span>
+          </div>
+          <div class="layer">
+            <span class="project-cat">Full Stack / POS</span>
+            <h3>NextBilling</h3>
+            <p class="project-tech">React &bull; TypeScript &bull; Vite &bull; Tailwind CSS &bull; Firebase</p>
+            <p class="project-desc">A billing, POS and inventory-management platform for small businesses &mdash; barcode-first billing, GST-aware totals, mixed payments and offline-tolerant stock control.</p>
+            <div class="project-links">
+              <a href="https://github.com/Ageshks/nextbilling-pos" target="_blank" rel="noopener noreferrer" aria-label="View the NextBilling POS project on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 &middot; CRM / ERP System -->
+        <div class="work" data-category="fullstack">
+          <div class="work-media" aria-hidden="true">
+            <i class="fa-solid fa-users-gear"></i>
+            <span>CRM / ERP</span>
+          </div>
+          <div class="layer">
+            <span class="project-cat">Full Stack / Business Software</span>
+            <h3>CRM / ERP System</h3>
+            <p class="project-tech">React &bull; Django &bull; REST API &bull; PostgreSQL</p>
+            <p class="project-desc">A multi-tenant CRM and ERP platform with role-based workflows for Admin, Manager, Sales, HR and Finance, covering leads, customers and business operations.</p>
+            <div class="project-links">
+              <a href="https://erp-ak-s1.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open the CRM and ERP live demo">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+              <a href="https://github.com/Ageshks/crm_backend" target="_blank" rel="noopener noreferrer" aria-label="View the CRM and ERP backend on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 &middot; Rudren Solutions -->
+        <div class="work" data-category="web">
+          <div class="work-media" aria-hidden="true">
+            <i class="fa-solid fa-laptop-code"></i>
+            <span>Rudren Solutions</span>
+          </div>
+          <div class="layer">
+            <span class="project-cat">Web Development</span>
+            <h3>Rudren Solutions</h3>
+            <p class="project-tech">React &bull; Vite &bull; Tailwind CSS &bull; Framer Motion</p>
+            <p class="project-desc">A multi-page business website with reusable React components, a Tailwind CSS design system and smooth Framer Motion page transitions.</p>
+            <div class="project-links">
+              <a href="https://github.com/Ageshks/rudrenfinal" target="_blank" rel="noopener noreferrer" aria-label="View the Rudren Solutions website project on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 &middot; Avani Jewels -->
+        <div class="work" data-category="web">
+          <div class="work-media" aria-hidden="true">
+            <i class="fa-solid fa-gem"></i>
+            <span>Avani Jewels</span>
+          </div>
+          <div class="layer">
+            <span class="project-cat">Web Development</span>
+            <h3>Avani Jewels</h3>
+            <p class="project-tech">HTML &bull; CSS &bull; Bootstrap &bull; JavaScript</p>
+            <p class="project-desc">A responsive jewellery brand website built with HTML, CSS, Bootstrap and JavaScript, focused on elegant product presentation on every screen size.</p>
+            <div class="project-links">
+              <a href="https://github.com/Ageshks/avani" target="_blank" rel="noopener noreferrer" aria-label="View the Avani Jewels website project on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 13 &middot; Meeting Scheduling App -->
+        <div class="work" data-category="fullstack">
+          <div class="work-media" aria-hidden="true">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Meeting Scheduler</span>
+          </div>
+          <div class="layer">
+            <span class="project-cat">Full Stack / Productivity</span>
+            <h3>Meeting Scheduling App</h3>
+            <p class="project-desc">A meeting scheduling application for planning availability, booking meeting slots and keeping track of invites across a team.</p>
+            <div class="project-links">
+              <span class="project-chip"><i class="fa-solid fa-lock"></i> Private Project</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14 &middot; Nextradev Website -->
+        <div class="work" data-category="web">
+          <div class="work-media" aria-hidden="true">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Nextradev</span>
+          </div>
+          <div class="layer">
+            <span class="project-cat">Web Development / Business</span>
+            <h3>Nextradev Website</h3>
+            <p class="project-desc">A corporate business website presenting services, company highlights and contact details in a clean, fully responsive layout.</p>
+            <div class="project-links">
+              <a href="https://github.com/Ageshks/nextradev" target="_blank" rel="noopener noreferrer" aria-label="View the Nextradev website project on GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15 &middot; GitHub Pages VS Code Extension -->
+        <div class="work" data-category="tools">
+          <img src="images/github-pages-manager.jpg" alt="GitHub Pages Manager VS Code extension icon" loading="lazy" decoding="async">
+          <div class="layer">
+            <span class="project-cat">Developer Tools</span>
+            <h3>GitHub Pages VS Code Extension</h3>
+            <p class="project-tech">VS Code Extension API &bull; TypeScript/JavaScript &bull; GitHub &bull; GitHub Pages</p>
+            <p class="project-desc">A Visual Studio Code extension that simplifies GitHub Pages workflows inside the editor &mdash; create, configure, deploy, monitor and maintain your GitHub Pages sites.</p>
+            <div class="project-links">
+              <a class="mini-btn" href="https://marketplace.visualstudio.com/items?itemName=Ageshks.github-pages-manager" target="_blank" rel="noopener noreferrer" aria-label="View the GitHub Pages Manager extension on the Visual Studio Marketplace">
+                <i class="fa-solid fa-puzzle-piece"></i> View Extension
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <a href="#" class="btn">See More Projects</a>
+      <a href="https://github.com/Ageshks?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn">See More Projects</a>
     </div>
   </div>
 
@@ -241,59 +479,63 @@
             <a href="https://www.linkedin.com/in/ageshks" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://github.com/Ageshks" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile"><i class="fa-brands fa-github"></i></a>
           </div>
-          <a href="/images/ageshks.pdf" class="btn btn2" download>Download CV</a>
+          <a href="images/ageshks.pdf" class="btn btn2" download>Download CV</a>
         </div>
         <div class="contact-right">
           <form name="submit-to-google-sheet">
             <label for="name" class="sr-only">Your Name</label>
-            <input type="text" id="name" name="Name" placeholder="Your Name" required>
+            <input type="text" id="name" name="Name" placeholder="Your Name" autocomplete="name" required>
             
             <label for="email" class="sr-only">Your Email</label>
-            <input type="email" id="email" name="Email" placeholder="Your Email" required>
+            <input type="email" id="email" name="Email" placeholder="Your Email" autocomplete="email" required>
             
             <label for="message" class="sr-only">Your Message</label>
-            <textarea id="message" name="Message" rows="6" placeholder="Enter your Message"></textarea>
+            <textarea id="message" name="Message" rows="6" placeholder="Enter your Message" required></textarea>
             
             <button type="submit" class="btn btn2">Submit</button>
           </form>
-          <div class="msg" id="msg"></div>
+          <div class="msg" id="msg" role="status" aria-live="polite"></div>
         </div>
       </div>
     </div>
     <div class="copyright">
-      <p>Copyright © <span id="current-year">2025</span> Agesh K S. All Rights Reserved.</p>
+      <p>Copyright &copy; <span id="current-year">2025</span> Agesh K S. All Rights Reserved.</p>
     </div>
   </div>
-
-  <!-- Add CSS for screen readers -->
-  <style>
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-  </style>
 
   <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
     var sidemenu = document.getElementById("sidemenu");
 
-    function opentab(tabname) {
+    function opentab(tabname, evt) {
+      var e = evt || window.event;
       for (var i = 0; i < tablinks.length; i++) {
         tablinks[i].classList.remove("active-link");
       }
       for (var i = 0; i < tabcontents.length; i++) {
         tabcontents[i].classList.remove("active-tab");
       }
-      event.currentTarget.classList.add("active-link");
+      if (e && e.currentTarget) {
+        e.currentTarget.classList.add("active-link");
+      }
       document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    // Enable keyboard activation (Enter / Space) for tab titles
+    function tabKey(evt, tabname) {
+      if (evt.key === "Enter" || evt.key === " " || evt.key === "Spacebar") {
+        evt.preventDefault();
+        opentab(tabname, evt);
+      }
+    }
+
+    // Enable keyboard activation (Enter / Space) for the menu icons
+    function menuKey(evt, action) {
+      if (evt.key === "Enter" || evt.key === " " || evt.key === "Spacebar") {
+        evt.preventDefault();
+        action();
+      }
     }
 
     function openmenu(){
@@ -305,29 +547,114 @@
 
     // Update copyright year automatically
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // ---- Sticky navbar ------------------------------------------------------------
+    // The bar is always fixed to the top of the viewport; scrolling only adds the
+    // compact / blurred look, so nothing here moves or hides any content.
+    var navbar = document.querySelector("nav");
+
+    function updateNavbar() {
+      if (navbar) {
+        navbar.classList.toggle("nav-scrolled", window.scrollY > 60);
+      }
+    }
+
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+    updateNavbar();
+
+    // ---- Project category filter -------------------------------------------------
+    // Filtering only shows/hides cards (hidden attribute), so the order of the
+    // project cards in the DOM - and therefore the visual order - never changes.
+    var filterButtons = document.querySelectorAll(".filter-btn");
+    var projectCards = document.querySelectorAll("#work-list .work");
+    var filterStatus = document.getElementById("filter-status");
+    var totalProjects = projectCards.length;
+
+    function cardCategories(card) {
+      return (card.getAttribute("data-category") || "").split(/\s+/);
+    }
+
+    function filterProjects(filter) {
+      var visible = 0;
+
+      projectCards.forEach(function (card) {
+        var matches = filter === "all" || cardCategories(card).indexOf(filter) !== -1;
+        card.hidden = !matches;
+        if (matches) {
+          visible++;
+        }
+      });
+
+      filterButtons.forEach(function (btn) {
+        var isActive = btn.getAttribute("data-filter") === filter;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      if (filterStatus) {
+        var activeBtn = filter === "all" ? null : document.querySelector('.filter-btn[data-filter="' + filter + '"]');
+        var label = activeBtn ? (activeBtn.getAttribute("data-label") || filter) : "";
+        filterStatus.textContent = filter === "all"
+          ? "Showing all " + visible + " projects"
+          : "Showing " + visible + " of " + totalProjects + " projects in " + label;
+      }
+    }
+
+    if (filterButtons.length && totalProjects) {
+      // Fill in the per-category counts from the cards themselves
+      filterButtons.forEach(function (btn) {
+        var key = btn.getAttribute("data-filter");
+        var count = 0;
+        projectCards.forEach(function (card) {
+          if (key === "all" || cardCategories(card).indexOf(key) !== -1) {
+            count++;
+          }
+        });
+        var badge = btn.querySelector(".filter-count");
+        if (badge) {
+          badge.textContent = count;
+        }
+      });
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          filterProjects(btn.getAttribute("data-filter"));
+        });
+      });
+
+      filterProjects("all");
+    }
   </script>
   
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwvAEYHdJYE9QaYsICT2HTxNv5PYwPjb_g6YG2cBpP_6vczZtywqaEGKn2U_bL4d5MI/exec';
     const form = document.forms['submit-to-google-sheet'];
     const msg = document.getElementById("msg");
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          msg.innerHTML = "Message sent successfully";
-          setTimeout(function(){
-            msg.innerHTML = "";
-          }, 5000);
-          form.reset();
-        })
-        .catch(error => console.error('Error!', error.message));
-    });
-  </script>
 
-  <!-- Preload Key Resources -->
-  <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="images/GESH.png" as="image">
+    if (form && msg) {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Request failed with status ' + response.status);
+            }
+            msg.style.color = "#2ecc71";
+            msg.textContent = "Message sent successfully";
+            form.reset();
+          })
+          .catch(error => {
+            console.error('Error!', error.message);
+            msg.style.color = "#ff004f";
+            msg.textContent = "Something went wrong. Please try again or email me directly.";
+          })
+          .finally(() => {
+            setTimeout(function(){
+              msg.textContent = "";
+            }, 5000);
+          });
+      });
+    }
+  </script>
 </body>
 </html>
